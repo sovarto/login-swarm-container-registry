@@ -1,0 +1,20 @@
+name: 'Login to Docker Swarm cluster container registry'
+description: 'Login to Docker Swarm cluster container registry'
+author: 'Sovarto GmbH'
+
+branding:
+  icon: 'cloud'
+  color: 'blue'
+
+inputs:
+  remote-state-access-token:
+    description: 'The access token for the remote state'
+    required: true
+
+outputs:
+  container-registry:
+    description: 'The address of the container registry'
+
+runs:
+  using: node20
+  main: dist/index.js
