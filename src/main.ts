@@ -16,7 +16,7 @@ export async function run(): Promise<void> {
             'infrastructure-services',
             InfrastructureServicesSchema);
         const registry = infrastructureServicesState.containerRegistry;
-        execSync(`docker login ${registry.externalAddress} -u ${registry.username} -p ${registry.password}`)
+        execSync(`docker login ${registry.externalAddress} -u '${registry.username}' -p '${registry.password}'`)
         core.setOutput('container-registry', registry.externalAddress);
     } catch (error) {
         if (error instanceof Error) {
